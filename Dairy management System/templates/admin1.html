@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Dairy Management System</title>
+        <link rel="icon" type="image/x-icon" href="static\cow.ico">
+        <link rel"stylesheet" href="static/styles.css">
+        <h1><i>Dairy Management System</i></h1>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/styles.css">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/"><i>Dairy</i></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/seller">Seller</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/staff">Staff</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <center>
+          <table class="det">
+            <tr>
+        <td>
+          <div class="card" style="width: 18rem;">
+            <img src="static\staff.png" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Staff</h5>
+              <p class="card-text">click here to view list of staff</p>
+              <a href="/adminstaff" class="btn btn-primary">staff details</a>
+            </div>
+          </div>
+          </td>
+          <td>
+          <div class="card" style="width: 18rem;">
+            <img src="static/seller.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">seller</h5>
+              <p class="card-text">click here to view list of sellers</p><br>
+              <a href="/adminseller" class="btn btn-primary">Seller Details</a>
+            </div>
+          </div>
+        </td>
+      
+          <td>
+          <div class="card" style="width: 18rem;">
+            <img src="static\milk-containers-isometric-vector.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">container collected</h5>
+              <p class="card-text">click here to view list of container collected</p>
+              <a href="/container" class="btn btn-primary">container details</a>
+            </div>
+          </div>
+        </td>
+          <td>
+          <div class="card" style="width: 18rem;">
+            <img src="static\bill.png" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">BILL</h5>
+              <p class="card-text">click here to view list Bill</p>
+              <a href="/bill" class="btn btn-primary">BILL</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <br>
+      <center>
+        <table>
+          <tr>
+            <td>
+      <div class="card" style="width: 18rem;">
+        <img src="static\staff.png" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Add Staff</h5>
+          <p class="card-text">Enter info and click to add new staff</p>
+          <form name="add staff" action="/admin1" method="post">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="stname" >
+                <label for="pass">name :</label>
+              </div><br>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" name="passwd" >
+                  <label for="name">password : </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" name="sal" id="sal" >
+                  <label for="name">Salary : </label>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Add Staff">
+              </div>
+            </form>
+          </td>
+          <td>
+            <div class="card" style="width: 18rem;">
+              <img src="static\bill.png" class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title">Bill info </h5><br><br>
+                <p class="card-text">Enter following details to get bill information of particular bill .</p><br><br>
+                <form name="bill info" action="/billinfo" method="post">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" name="bid">
+                      <label for="bid">Bill id :</label>
+                    </div><br>
+                      <br>
+                      <input type="submit" class="btn btn-primary" value="bill info">
+                    </div>
+                  </form>
+                </td>
+                <td>
+                  <div class="card" style="width: 18rem;">
+                    <img src="static\bill.png" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">date info </h5><br><br>
+                      <p class="card-text">Enter following details to get bill information of particular date in format yyyy-mm-dd .</p><br><br>
+                      <form name="bill info" action="/dateinfo" method="post">
+                          <div class="form-floating">
+                            <input type="text" class="form-control" name="bid">
+                            <label for="bid">date :</label>
+                          </div><br>
+                            <br>
+                            <input type="submit" class="btn btn-primary" value="date info">
+                          </div>
+                        </form>
+                      </td>
+              </tr>
+            </table><br>
+            <a href="/admin" class="btn btn-primary">log out</a>
+          </center>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+        <img src="static\istockphoto-1297005217-612x612.jpg" alt="cows">
+        <img src="static\cattle.jpg" alt="cows">
+
+<img src="programming.gif" alt="Computer Man" style="width:48px;height:48px;">
+
+<a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+</a>
+
+
+<button type="button" class="btn btn-outline-dark">Admin</button>
+          <button type="button" class="btn btn-outline-dark">Seller</button>
+          <button type="button" class="btn btn-outline-dark">Staff</button>
+
+<h1><i><marquee direction="right">Dairy Management System</marquee></i></h1>
+
+insert into admin values('root','server');
+insert into staff values(2,'gagan','server',12000);
+
+                                                              pdf
+
+# Python program to create
+# a pdf file
+
+
+from fpdf import FPDF
+
+
+# save FPDF() class into a
+# variable pdf
+pdf = FPDF()
+
+# Add a page
+pdf.add_page()
+
+# set style and size of font
+# that you want in the pdf
+pdf.set_font("Arial", size = 15)
+
+# create a cell
+pdf.cell(200, 10, txt = "GeeksforGeeks",
+		ln = 1, align = 'C')
+
+# add another cell
+pdf.cell(200, 10, txt = "A Computer Science portal for geeks.",
+		ln = 2, align = 'C')
+
+# save the pdf with name .pdf
+pdf.output("GFG.pdf")
+
+create table admin(
+  name varchar(10),
+  passwd varchar(10),
+  constraint pa primary key(name));
+
+create table staff(
+  staffid integer,
+  name varchar(10),
+  passwd varchar(10),
+  salary integer,
+  constraint ps1 primary key(staffid));
+
+create table seller(
+  sellid integer,
+  name varchar(10),
+  passwd varchar(10),
+  cattle varchar(10),
+  address varchar(20),
+  constraint ps2 primary key(sellid));  
+
+  create table bill(
+  bid integer,
+  sellid integer,
+  staffid integer,
+  bdate date,
+  amount integer,
+  milk_qty integer,
+  constraint pb primary key(bid),
+  constraint fb1 foreign key(sellid)references seller(sellid),
+  constraint fb2 foreign key(staffid)references staff(staffid));
+
+create table milk_container(
+  container_id integer,
+  sellid integer,
+  staffid integer,
+  submit date,
+  fat varchar(5),
+  collected varchar(5),
+  constraint pm primary key(container_id),
+  constraint fm1 foreign key(sellid)references seller(sellid),
+  constraint fm2 foreign key(staffid)references staff(staffid));
+
+select count(*) from staff;
+
+Visualize MySQL Data with pandas
+The data-centric interfaces of the MySQL Python Connector make it easy to integrate with popular tools like pandas and SQLAlchemy to visualize data in real-time.
+
+view source
+engine = create_engine("mysql///Password=password&User=user")
+ 
+df = pandas.read_sql("SELECT * FROM MySQLTable", engine)
+ 
+df.plot()
+plt.show()
+
+https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html
+
+emp_no = cursor.lastrowid
+
+
+named_tuple = time.localtime() # get struct_time
+time_string = time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple)
+
+print(time_string)
+
+
+from datetime import datetime
+
+now = datetime.now()
+
+current_time = now.strftime("%H:%M:%S")
+print("Current Time =", current_time)
+
+# Python Program to Convert seconds
+# into hours, minutes and seconds
+import datetime
+
+def convert(n):
+	return str(datetime.timedelta(seconds = n))
+	
+# Driver program
+n = 12345
+print(convert(n))
